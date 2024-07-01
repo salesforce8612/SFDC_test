@@ -1,0 +1,25 @@
+<template>
+    <lightning-card title="Address Autocomplete">
+        <div class="slds-m-around_medium">
+            <lightning-input label="Origin" 
+                             placeholder="Enter origin address" 
+                             onchange={handleInputChange}
+                             data-id="origin">
+            </lightning-input>
+            
+            <lightning-input label="Destination" 
+                             placeholder="Enter destination address" 
+                             onchange={handleInputChange}
+                             data-id="destination">
+            </lightning-input>
+
+            <lightning-button label="Get Directions" onclick={getDirections}></lightning-button>
+            
+            <template if:true={result}>
+                <p>Distance: {result.distance}</p>
+                <p>Travel Time: {result.travelTime}</p>
+                <p>Cost: {result.cost}</p>
+            </template>
+        </div>
+    </lightning-card>
+</template>
